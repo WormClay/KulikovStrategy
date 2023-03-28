@@ -1,9 +1,7 @@
 using UnityEngine;
-public interface ISelecatable
+public interface ISelecatable : IHealthHolder
 {
-    float Health { get; }
-    float MaxHealth { get; }
     Sprite Icon { get; }
-    Outline Outline { get;}
+    Outline Outline { get; }
     void SetOutline(bool enabled);
 }
