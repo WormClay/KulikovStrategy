@@ -1,5 +1,5 @@
 using UnityEngine;
-public class MainUnit : MonoBehaviour, ISelecatable
+public class MainUnit : MonoBehaviour, ISelecatable, IAttackable
 {
     public float Health => _health;
     public float MaxHealth => _maxHealth;
@@ -7,6 +7,8 @@ public class MainUnit : MonoBehaviour, ISelecatable
 
     public Outline Outline { get; private set; }
 
+    public Transform PivotPoint => _pivotPoint;
+    [SerializeField] private Transform _pivotPoint;
     [SerializeField] private float _maxHealth = 100;
     [SerializeField] private Sprite _icon;
     private float _health = 100;

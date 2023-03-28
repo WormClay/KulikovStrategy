@@ -1,10 +1,13 @@
 using UnityEngine;
-public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelecatable
+public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelecatable, IAttackable
 {
     public float Health => _health;
     public float MaxHealth => _maxHealth;
     public Sprite Icon => _icon;
     public Outline Outline { get; private set; }
+
+    public Transform PivotPoint => _pivotPoint;
+    [SerializeField] private Transform _pivotPoint;
     [SerializeField] private Transform _unitsParent;
     [SerializeField] private float _maxHealth = 1000;
     [SerializeField] private Sprite _icon;
